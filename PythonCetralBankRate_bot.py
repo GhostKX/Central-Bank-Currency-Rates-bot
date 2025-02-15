@@ -14,6 +14,7 @@ API_KEY = str(os.getenv('API_KEY'))
 bot = telebot.TeleBot(API_KEY)
 
 
+# Command /start message handler to start the bot
 @bot.message_handler(commands=['start'])
 def start_bot(message):
     user_id = message.from_user.id
@@ -25,6 +26,7 @@ def start_bot(message):
 all_currencies = []
 
 
+# Handling user choice
 def handling_user_choice(message):
     user_id = message.from_user.id
     if message.text == '📈 Currency Rate':
